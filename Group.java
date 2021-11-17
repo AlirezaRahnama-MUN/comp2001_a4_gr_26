@@ -28,21 +28,19 @@ public class Group
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int worldCupSetup()
+    public Team[] worldCupSetup()
     {
         // put your code here
-        String[] names= {"A","B","C","D","E","F"};
-        forEach(String name: names){
-            for(i=0;i<4;i++){
-                team= new Team();
-                this.name=name;
-                teams.add(team);
-                
-                
+        String[] groups= {"A","B","C","D","E","F"};
+        for(int j=0;j<6;j++){
+            for(int i=0;i<4;i++){
+                Team team= new Team();
+                this.name=groups[j];
+                teams[i]=team;
             }
                 
             }
-            
+        return teams;    
             
         }
     }

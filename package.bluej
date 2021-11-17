@@ -1,9 +1,9 @@
 #BlueJ package file
-dependency1.from=Group
-dependency1.to=Team
+dependency1.from=Team
+dependency1.to=Name
 dependency1.type=UsesDependency
-dependency2.from=Team
-dependency2.to=Name
+dependency2.from=Group
+dependency2.to=Team
 dependency2.type=UsesDependency
 editor.fx.0.height=838
 editor.fx.0.width=1550
@@ -14,7 +14,7 @@ objectbench.width=452
 package.divider.horizontal=0.5995297805642633
 package.divider.vertical=0.7994417862838915
 package.editor.height=395
-package.editor.width=674
+package.editor.width=655
 package.editor.x=148
 package.editor.y=148
 package.frame.height=600
