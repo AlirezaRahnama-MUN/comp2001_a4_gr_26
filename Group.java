@@ -31,10 +31,13 @@ public class Group
     public int worldCupSetup()
     {
         // put your code here
-        String[] names= {"A","B","C","D","E","F","G","H"};
+        String[] names= {"A","B","C","D","E","F"};
         forEach(String name: names){
             for(i=0;i<4;i++){
-                team= New Team();
+                team= new Team();
+                this.name=name;
+                teams.add(team);
+                
                 
             }
                 
@@ -43,4 +46,3 @@ public class Group
             
         }
     }
-}

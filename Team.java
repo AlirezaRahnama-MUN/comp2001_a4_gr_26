@@ -41,15 +41,17 @@ public class Team
         return players;
     }
     public String setCountry(){    
-        String[] countries=new String[]{"Russia","Saudi","Egypt","Uruguay","Mororco","Iran","Portugual","Spain","France","Australia","Argentina","Iceland","Peru","Croatia","Denmark",
-            "Nigeria","CostaRica","Germany","Serbia","Mexico","Brazil","Sweden","Switzerland","South Korea","Belgium","Tunisia","England","Panama","Colombia",
-            "Japan","Poland","Senegal"};
-        Random rand=new Random(); 
-        String country=countries[rand.nextInt(countries.length)];
-        int index=countries.indexOf(country);
+        String[] countries=new String[]{"Portugual","Spain","France","Argentina","Iceland","Peru","Croatia","Denmark",
+            "Nigeria","CostaRica","Germany","Serbia","Mexico","Brazil","Sweden","Switzerland","South Korea","Belgium",
+            "England","Panama","Colombia","Japan","Poland","Senegal"};
+        Random rand= new Random();
+        int index= rand.nextInt(countries.length);
+        String country=countries[index];
+        
         for (int i = index; i < countries.length - 1; i++) {
-            array[i] = array[i + 1];
-}
+            countries[i] = countries[i + 1];
+        }
+        return country;
 
 }
 }
