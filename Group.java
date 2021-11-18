@@ -10,7 +10,7 @@ public class Group
     // instance variables - replace the example below with your own
     private String name;
     private Team[] teams;
-    private String[] groups;
+    private Team[][] group;
 
     /**
      * Constructor for objects of class Group
@@ -20,6 +20,7 @@ public class Group
         // initialise instance variables
         this.name=name; 
         this.teams=new Team[4];
+        this.group=worldCupSetup();
     }
 
     /**
@@ -28,19 +29,21 @@ public class Group
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public Team[] worldCupSetup()
+    public Team[][] worldCupSetup()
     {
         // put your code here
-        String[] groups= {"A","B","C","D","E","F"};
+        group = new Team [6][4];
+        String[] groupNames= {"A","B","C","D","E","F"};
         for(int j=0;j<6;j++){
             for(int i=0;i<4;i++){
                 Team team= new Team();
-                this.name=groups[j];
+                this.name=groupNames[j];
                 teams[i]=team;
+                group[j]=teams;
             }
                 
             }
-        return teams;    
+        return group;    
             
         }
     }
