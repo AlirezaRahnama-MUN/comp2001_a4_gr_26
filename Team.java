@@ -1,11 +1,8 @@
 import java.util.Random;
 import java.util.*;
 /**
- * this class creates an object of a Team of soccerwith instance variables of Country, 23 randpomly generated player names,
+ * this class creates an object of a Team of soccer with instance variables of Country, 23 randpomly generated player names,
  * and a randomly generated coach name.
- *
- * @author (your name)
- * @version (a version number or a date)
  */
 public class Team
 {
@@ -13,6 +10,10 @@ public class Team
     protected String country;
     private Name[] players;
     private Name  coach;
+    private int goals;
+    private int points;
+    private String[] countries;
+    
      
     /**
      * Constructor for objects of class Team
@@ -21,12 +22,22 @@ public class Team
     {
         // initialise instance variables
         this.players= new Name[23];
+        players = setTeam();
         this.coach= new Name();
+        countries = new String[]{"Portugual","Spain","France","Argentina","Iceland","Peru","Croatia","Denmark",
+            "Nigeria","CostaRica","Germany","Serbia","Mexico","Brazil","Sweden","Switzerland","South Korea","Belgium",
+            "England","Panama","Colombia","Japan","Poland","Senegal"};
         this.country=setCountry();
-        
-        
     }
-
+    public String getName(){
+        return country;
+    }
+    public int getGoals(){
+        return goals;
+    }
+    public int getPoints(){
+        return points;
+    }
     /**
      *
      *
@@ -41,9 +52,6 @@ public class Team
         return players;
     }
     public String setCountry(){    
-        String[] countries=new String[]{"Portugual","Spain","France","Argentina","Iceland","Peru","Croatia","Denmark",
-            "Nigeria","CostaRica","Germany","Serbia","Mexico","Brazil","Sweden","Switzerland","South Korea","Belgium",
-            "England","Panama","Colombia","Japan","Poland","Senegal"};
         Random rand= new Random();
         int index= rand.nextInt(countries.length);
         String country=countries[index];
@@ -53,5 +61,14 @@ public class Team
         }
         return country;
 
-}
+    }
+    /**
+     * Methods to keep track of goals and points following a match
+     */
+    public void addGoals(int newGoals){
+        goals += newGoals;
+    }
+    public void addPoints(int newPoints){
+        points += newPoints;
+    }
 }

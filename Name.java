@@ -1,9 +1,6 @@
 import java.util.Random;
 /**
- * Write a description of class Player here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Generetates random 'Names' for coaches and players
  */
 public class Name
 {
@@ -32,11 +29,11 @@ public class Name
         String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         Random rand = new Random();
         int len = rand.nextInt(10); //creates an integer number with upperbound of 10
-	StringBuilder sb = new StringBuilder(len);
-	for (int i = 0; i < len; i++){
-	sb.append(chars.charAt(rand.nextInt(chars.length())));
+    StringBuilder sb = new StringBuilder(len);
+    for (int i = 0; i < len; i++){
+    sb.append(chars.charAt(rand.nextInt(chars.length())));
 }
-	  
-	return sb.toString();	
+      
+    return sb.toString();    
 }
 }

@@ -1,17 +1,16 @@
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
- * Write a description of class Group here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * This class stores 6 different teams ands stores the matches between these
+ * teams
  */
 public class Group
 {
     // instance variables - replace the example below with your own
     private String name;
     private Team[] teams;
-    private Team[][] group;
-
+    private ArrayList<Match> matches;
     /**
      * Constructor for objects of class Group
      */
@@ -19,31 +18,38 @@ public class Group
     {
         // initialise instance variables
         this.name=name; 
-        this.teams=new Team[4];
-        this.group=worldCupSetup();
+        teams = new Team[4];
+        matches = new ArrayList<>();
     }
-
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Accessors and mutators for instance variables
      */
-    public Team[][] worldCupSetup()
-    {
-        // put your code here
-        group = new Team [6][4];
-        String[] groupNames= {"A","B","C","D","E","F"};
-        for(int j=0;j<6;j++){
-            for(int i=0;i<4;i++){
-                Team team= new Team();
-                this.name=groupNames[j];
-                teams[i]=team;
-                group[j]=teams;
-            }
-                
-            }
-        return group;    
-            
-        }
+    public Team[] getTeams(){
+        return teams;
     }
+    public String getName(){
+        return name;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public void addTeam(int index,Team team){
+        teams[index] = team;
+    }
+    /**
+     * Adds a match to arrayList with the score for both teams
+     */
+    public void addMatch(int team1Score,int team2Score){
+        matches.add(new Match(teams,team1Score,team2Score));
+    }
+    /**
+     * returns a string with the points and goals of each team
+     */
+    public String calculateRanking(){
+        String s = "Group '"+getName()+"' Rankings:\n";
+        for(Team team : teams){
+            s += team.getName()+" has "+team.getPoints()+" points and "+team.getGoals()+" goals.";
+        }
+        return s;
+    }
+}    
