@@ -29,12 +29,21 @@ public class Team
             "England","Panama","Colombia","Japan","Poland","Senegal"};
         this.country=setCountry();
     }
+    /**
+     * returns the country of the team
+     */
     public String getName(){
         return country;
     }
+    /**
+     * returns number of scored goals
+     */
     public int getGoals(){
         return goals;
     }
+    /**
+     * returns the points
+     */
     public int getPoints(){
         return points;
     }
@@ -51,6 +60,9 @@ public class Team
         }
         return players;
     }
+    /**
+     * randomly assigns a country to the generated team
+     */
     public String setCountry(){    
         Random rand= new Random();
         int index= rand.nextInt(countries.length);

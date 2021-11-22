@@ -61,6 +61,8 @@ public class Match
         // put your code here
         Random rand=new Random();
         int teamIndex= rand.nextInt(4);
-        return teams[teamIndex];
+        teams[teamIndex] = teams[teamIndex + 1];
+        Team randTeam= teams[teamIndex];
+        return randTeam;
     }
 }
